@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+        //Ejercicio 10. Crea un script que simule el acceso a un cajero automático. El sistema tiene un PIN correcto almacenado en una constante
+        //  (por ejemplo, 1234). El usuario tiene hasta 3 intentos para introducir el PIN correcto usando prompt(). Si acierta, 
+        // se muestra un mensaje de bienvenida. Si falla los 3 intentos, se bloquea el acceso con un mensaje de "Tarjeta bloqueada".
+        // El script debe usar un bucle “while” o “do while” para controlar los intentos.
+        const pin = 1234;
+        let i = 1;
+        let intento = +prompt("Ingresa una contraseña");
+
+        while (i < 3) {
+            if (intento != pin) {
+                alert("Contraseña equivocada, intentelo de nuevo")
+                i++;
+                let intento = +prompt("Ingresa una contraseña");
+            } else {
+                alert("Bienvenido a su banco");
+                break;
+            }
+        }
+        alert(intento);
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

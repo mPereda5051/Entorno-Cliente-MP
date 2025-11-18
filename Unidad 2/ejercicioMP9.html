@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+        /*Ejercicio 9. Crea un script que simule la carga de configuración de un usuario. Tendrás tres posibles fuentes para obtener un nombre de usuario:
+
+Un valor introducido por el usuario con prompt().
+Una constante en el código. Por defecto será “Invitado” aunque para hacer pruebas sería recomendable modificarla a null, undefined o una cadena vacía.
+Un valor de respaldo ("Anónimo")
+
+Usando el operador ??, selecciona el primer valor que no sea null ni undefined. Luego, repite usando || para ver la diferencia con valores como una cadena vacía ("") o 0. 
+Muestra los valores elegidos en cada caso por consola. Se recomienda probar a introducir cadenas vacías en el prompt a ver qué ocurre.
+Se recomienda probar a introducir cadenas vacías en el prompt a ver qué ocurre.
+*/
+
+        /*
+        let a = +prompt("escribe un valor");
+        const b = null;
+        alert(a ?? b ?? "Anonymous");
+*/
+        //al dejar la cadena vacia en el promt este devuelve 0, al poner una cadena de texto este devuelve NaN y al poner un numero este devuelve el numero escrito.
+
+        const e = null;
+        let d = +prompt("escribe un valor");
+
+        alert(d || e || "Anonymous");
+
+        /* al dejar el promt vacion este devuelve el valor de respaldo. Al poner un numero este devuelve el numero escrito y al insertar una cadena de texto este devuelve el valor de respaldo */
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

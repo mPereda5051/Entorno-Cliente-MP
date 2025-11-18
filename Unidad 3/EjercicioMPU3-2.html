@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+
+        //Redondear el resultado final a 2 decimales (con la función que
+        //automáticamente calcula el valor más cercano). Hecho
+
+        /*
+        Si el cálculo es correcto, se muestra el alert con el resultado del precio final.
+        Si el resultado fuese muy alto y supera el rango permitido por JavaScript, se
+        validará y se mostrará un alert indicado que es “infinito”. Si quieres probar un
+        número infinito, prueba a poner en notación científica un número más alto
+        que 1.7976931348623157e+308 (es el máximo valor que admite JavaScript).
+        Si la validación es correcta debería admitir este formato.
+
+        */
+
+
+
+
+
+
+        //introduce el precio del articulo
+        let numero = parseFloat(prompt("Introduce un numero"));
+
+        //Añadido comprobacion para ver si el numero es infinito
+        if (numero == Infinity) {
+
+            alert("El numero supera el valor maximo de java script, es un numero infinito")
+        } else {
+            //Comprobar si el valor introducido es un numero y si da true, proceder a insertar el descuento.
+            if (isFinite(numero) == true) {
+
+
+                let numero2 = parseFloat(prompt("Introduce un numero entre 1 y 100 para aplicar como descuento"));
+                let descuento = numero2 / 100;
+                //añadido Math.round para redondear el resultado final.
+                let resultado = Math.round(numero - (numero * descuento));
+                // si el valor introducido del descuento esta entre 1 y 100 procede a hacer la operacion.
+                if (numero2 >= 1 && numero2 <= 100) {
+                    alert("El precio total con el descuento aplicado es: " + resultado + "€");
+
+                } else {
+                    alert("El descuento no es valido");
+                }
+
+
+            } else {
+                alert("introduce un valor valido");
+            }
+        }
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

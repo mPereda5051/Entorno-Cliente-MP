@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+        /*
+Ejercicio 11. Crea un script que genere una tabla de multiplicar "especial" del 1 al 10, usando dos bucles for anidados:
+La tabla actual se detiene y pasa a la siguiente cuando el producto sea múltiplo de una constante almacenada en el script 
+(por ejemplo, múltiplos de 3, 4 o 5 según el valor de la constante).
+Antes de cada tabla, aparecerá un confirm que permite al usuario finalizar el bucle y el script antes de tiempo.
+La salida por pantalla será con document.write().
+        */
+        const numero = 2;
+
+
+        document.write("Tabla de multiplicacion </br>");
+        for (let i = 1; i < 11; i++) {        
+        alert("Quieres ver la tabla de multiplicar de " + i);
+
+            for (let x = 0; x <= 10; i++) {
+                let producto = x * numero;
+                if (producto % 3 == 0) {
+                    document.write(`${i} * ${numero} = ` + producto);
+                    break;
+                }
+
+            }
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

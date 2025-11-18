@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+
+        /*
+        Crea un script para realizar un saludo personalizado. Para ello crearemos
+        una función que recibe dos parámetros:
+        • Nombre.
+        • Es un parámetro opcional que puede recibir en minúsculas masculino o femenino.
+        Si no recibe nada, se indica el valor por defecto “no especificado”.
+        El script pedirá por el prompt el nombre de la persona y el género. Vamos a crear otra
+        función que valida si hay cadenas en blanco. En función de los parámetros recibidos
+        tendremos el siguiente resultado:
+        • Si el nombre está en blanco, directamente se muestra un mensaje de error antes de
+        llamar a la función con el saludo.
+        • Si el nombre no está en blanco. En función del género tendremos el siguiente
+        resultado en la función con dos parámetros que se explicaba al comienzo del
+        enunciado.
+        o Si el género no está en blanco, se llama a la función con el saludo con dos
+        parámetros (nombre y género). El resultado será:
+        ▪ "Bienvenido, NOMBRE" si el género es "masculino".
+        ▪ "Bienvenida, NOMBRE" si el género es "femenino".
+        o Si el género está en blanco, se llama a la función con el saludo con un
+        parámetro (nombre). “Bienvenid@, NOMBRE".
+        */
+
+        let nombre = prompt("Escribe un nombre");
+        let genero = prompt("Escribe el genero de la persona");
+
+        function saludo(nombre, genero) {
+            if (nombre == "") {
+                return false;
+            }  else if (genero == "masculino") {
+                alert("Bienvenido, " + nombre);
+            } else if (genero == "femenino") {
+                alert("Bienvenida, " + nombre);
+            } else if (genero == "") {
+                alert("Bienvenid@, " + nombre)
+            } else {
+                alert("¡Error, valor no reconocido!")
+            }
+        }
+        
+        saludo(nombre, genero)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

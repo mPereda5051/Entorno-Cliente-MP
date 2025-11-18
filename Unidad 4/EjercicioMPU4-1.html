@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    
+</head>
+<body>
+    
+</body>
+<p id="output"></p>
+
+<script>
+    /*
+1. (Objetos: creación, recorrido y propiedades) Vamos a simular un objeto llamado
+“alumno” con las siguientes propiedades:
+• edad: por defecto 18.
+• admin: por defecto false.
+• stats: un objeto con las propiedades:
+o posts: número de publicaciones (por defecto 0)
+o followers: número de seguidores (por defecto 0)
+Ahora vamos a probar el objeto. Todos los apartados que pidan mostrar un resultado
+será en un párrafo de la página con id “output”.
+• Incrementa el número de posts en 2 y de followers en 3.
+• Cambia el permiso de administrador a “true” y muestra el resultado en el párrafo.
+• Quita la propiedad de administrador.
+• Crea una función fuera del objeto que recibe un objeto como parámetro y recorre
+todas sus propiedades del objeto y muestra el resultado en el párrafo. Si se
+encuentra alguna propiedad que sea un objeto como “stats”, recórrelo y muestra
+todas sus propiedades. Si alguna propiedad es del tipo “función” no se mostrará.
+    */
+
+    let alumno ={
+        edad: 18,
+        isAdmin: false,
+        stats: {
+            posts: 0,
+            followers: 0
+        }
+        
+    }
+
+    alumno.stats.posts = 2;
+    alumno.stats.followers= 3;
+    alumno.isAdmin = true;
+
+    let texto = document.getElementById("output");
+    texto.textContent = alumno;
+
+</script>
+</html>

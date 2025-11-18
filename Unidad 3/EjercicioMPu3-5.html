@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Evaluación del alumno</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+
+<body>
+
+    <!-- Añadidos la etiqueta <label> y la etiqueta <input> para ponerlos como campos rellenables-->
+    <label>Nombre: <input type="text" id="name"></label>
+    <br>
+    <label>Nota: <input type="int" id="grade"></label>
+    <br>
+    <button id="submit">Aceptar</button>
+    <h2>Nombre del alumno</h2>
+    <p id="notaFinal">Resultado de la evaluación:</p>
+    <div class="mensaje"></div>
+
+    <script>
+        /*
+            El HTML pide al usuario con prompt su nombre y apellidos y una calificación de 0 a 10.
+            El script debe:
+            - Mostrar el nombre en el <h2>
+            - Añadir la nota dentro del <p id="notaFinal"> en una etiqueta <strong>
+            - Mostrar en el <div class="mensaje"> el texto según la nota
+            - Usar getElementById, querySelector, getElementsByTagName, innerHTML y textContent
+        */
+
+        /*
+(Evento click básico) Modifica el ejercicio 5. El prompt se reemplaza por etiquetas
+input. Se muestra un campo de texto para introducir nombre y apellidos y otro
+numérico con calificación de 0 a 10 (se validará que el número introducido es
+correcto). Además, se añade un botón que cada vez que se pulsa sobrescribe el
+texto de la página con la información introducida con las mismas especificaciones
+del ejercicio 5. Ahora el script se muestra en la etiqueta head y no se ejecuta hasta
+que no cargue el HTML
+
+
+
+        */
+
+        // pedir nombre, apellido
+        
+        const boton = document.getElementById("submit");
+            //añadido evento para que el boton funcione
+        boton.addEventListener("click", () => {
+        //cambios en las variables para que obtengan el valor de los campos de texto.
+        const nombre = document.getElementById("name").value;
+        const puntuacion = document.getElementById("grade").value;
+            // Validación para comprobar si la nota es valida
+            while (isNaN(puntuacion) || puntuacion < 0 || puntuacion > 10) {
+                alert("Por favor, introduce una nota válida entre 0 y 10.");
+                puntuacion = Number(prompt("Introduce la nota (0 a 10):"));
+            }
+
+            // mostrar el nombre
+            let titulo = document.querySelector("h2");
+            titulo.textContent = nombre;
+
+            // mostrar la nota
+            let notaFinal = document.getElementById("notaFinal");
+            notaFinal.innerHTML = `Resultado de la evaluación: Nota: ${puntuacion}`;
+
+            // determinar el mensaje según la nota
+            let mensaje = "";
+            if (puntuacion < 5) {
+                mensaje = "SUSPENSO";
+            } else if (puntuacion < 6) {
+                mensaje = "APROBADO";
+            } else if (puntuacion < 7) {
+                mensaje = "BIEN";
+            } else if (puntuacion < 9) {
+                mensaje = "NOTABLE";
+            } else {
+                mensaje = "SOBRESALIENTE";
+            }
+
+            // mostrar mensaje
+            let anotacion = document.querySelector(".mensaje");
+            anotacion.textContent = mensaje;
+        });
+    </script>
+</body>
+
+</html>

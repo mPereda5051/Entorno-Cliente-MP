@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana emergente</title>
+
+</head>
+
+<body>
+    <h2 id="saludo"></h2>
+    <button id="cerrar">Cerrar y enviar</button>
+
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const nombre = params.get("nombre");
+
+        // Mostrar el mensaje
+        const saludo = document.getElementById("saludo");
+        if (nombre) {
+            saludo.textContent = `Hola, ${nombre}`;
+
+        } else {
+            saludo.textContent = "No se ha recibido ningún nombre.";
+        }
+
+        boton.addEventListener("click", () => {
+            const nombre = document.getElementById("cerrar").value.trim();
+            window.close();
+
+
+        });
+    </script>
+</body>
+
+</html>

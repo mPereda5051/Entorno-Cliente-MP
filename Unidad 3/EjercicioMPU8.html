@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana principal - Ejercicio 8</title>
+    
+</head>
+<body>
+
+    <h1>Ventana principal</h1>
+
+    <iframe id="marco"></iframe> <br>
+    <label>Nombre: <input type="text" id="nombre"></label><br>
+    <button id="abrir">Abrir</button>
+    <script>
+
+        /*
+. (Ventanas emergentes y comunicación entre ellas) Crea una página HTML que
+tenga un botón y un campo de texto. Al hacer clic en el botón, se abre una ventana
+emergente (pop-up) con un mensaje personalizado.
+La ventana principal index_ejercicio8.html:
+o Tiene un campo de texto y un botón que abre una ventana emergente.
+o Un iframe de 300x150 y un borde negro inicialmente vacío.
+o Envía el nombre del campo de texto a la ventana emergente solamente
+si no está vacío. Si estuviera vacío se muestra un alert con un error y no
+se abre la ventana.
+La ventana emergente pop-up_ejercicio8.html:
+o Recibe el nombre cuando carga y lo muestra dentro de un encabezado
+<h2>.
+
+
+
+        */
+        // Referencia al botón
+        const boton = document.getElementById("abrir");
+
+        boton.addEventListener("click", () => {
+            const nombre = document.getElementById("nombre").value.trim();
+
+            // Validar si el campo está vacío
+            if (!nombre) {
+                alert("Por favor, escribe un nombre antes de abrir la ventana.");
+                return;
+            }
+
+            // Abrir la ventana emergente
+            const ventana = window.open(
+                `ventana-emergente.html?nombre=${encodeURIComponent(nombre)}`,
+                "popup",
+                "width=400,height=250"
+            );
+        });
+    </script>
+</body>
+</html>

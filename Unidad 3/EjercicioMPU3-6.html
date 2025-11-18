@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Ejercicio 6</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='mainEJ6.css'>
+</head>
+
+<body>
+    <h1 id="titulo">Bienvenido/a</h1>
+    <p class="descripcion">Este es un texto de prueba.</p>
+
+    <div class="contenedor">
+        <p class="resaltado">Este párrafo está dentro de un contenedor.</p>
+    </div>
+
+    <script>
+/*
+Solicita al usuario la siguiente información:
+Un prompt con un nuevo color para el texto del h1 (por ejemplo: "blue",
+"#ff0000"...). No hace falta validar el formato del color.
+Un confirm indicando si quiere resaltar el texto del párrafo con clase
+“descripcion”. Si acepta, se añadirá al párrafo la clase llamada “resaltado” y se
+eliminará del párrafo que inicialmente tiene esta clase y se sitúa dentro del div. 
+
+Si el usuario ha aceptado y la clase “resaltado” se cambia de párrafo, se
+mostrará otro confirm indicando si quiere ocultar el contenedor. Si
+acepta, se oculta la propiedad display del div con clase “contenedor”.
+
+*/
+
+        //pedir el nuevo color
+        let nuevo_color = prompt("Escribe un nuevo color para el título (ejemplo: 'blue')");
+
+        // cambiar el color del h1
+        document.getElementById("titulo").style.color = nuevo_color;
+
+        //Confirm para resaltar descripción
+        let resaltar = confirm("¿Quieres resaltar el texto del párrafo de descripción?");
+
+        //comprobacion para ver si resaltar = true y si es true se crea la variable ocultar para poder ocultar la frase del contenedor
+        if (resaltar) {        
+            let ocultar = confirm("¿Quieres ocultar el contenedor?");
+
+            //descripcion
+            let descripcion = document.querySelector(".descripcion");
+            //resaltado
+            let textoR = document.querySelector(".contenedor .resaltado");
+
+
+            //añadir la clase 'resaltado'
+            descripcion.classList.add("resaltado");
+
+            //quitar la clase 'resaltado'
+            textoR.classList.remove("resaltado");
+            //añadido comprobacion para ver si oculto = true
+            if(ocultar){
+                textoR.style.display = "none";
+
+            }
+        }
+    </script>
+</body>
+
+</html>

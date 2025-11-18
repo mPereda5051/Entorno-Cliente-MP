@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Juego: Posición de "JavaScript"</title>
+  <script>
+
+    /*
+    (String) Crea un script que reciba una cadena de texto. El script ahora elimina todos
+    los espacios a los lados y comprueba si la cadena contiene la palabra “JavaScript”
+    ya sea en mayúsculas o minúsculas. Hecho
+     Si no la contiene, devuelve un mensaje indicando que no la encontró.
+     Si encuentra la cadena, el usuario deberá adivinar en qué posición empieza
+    esta cadena. Cada vez que el usuario falle, el script le dará pistas e indicará
+    si la posición es mayor o menor hasta que acierte. Cuando acierte, el script
+    mostrará el número de intentos realizados y el resto de la cadena después
+    de la palabra “JavaScript”.
+    */
+
+
+    //Añadido eliminar los espacios y que acepte la palabra JavaScript ya sea en mayuscula o minuscula
+    let texto = prompt("Escribe una oración que contenga la palabra 'JavaScript':").toUpperCase().trim();
+    //comprobacion para ver si la oración contiene la palabra JavaScript
+    if (texto.includes("JAVASCRIPT")) {
+      const posicionReal = texto.indexOf("JAVASCRIPT");
+      let posicion = parseInt(prompt("¿En qué posición empieza la palabra 'JavaScript'?"));
+      let intentos = 0;
+
+      //bucle para guardar el numero de intentos
+
+      while (posicion !== posicionReal) {
+        intentos++;
+
+        if (posicion < posicionReal) {
+          alert("La posición real es MAYOR que la que introdujiste.");
+        } else {
+          alert("La posición real es MENOR que la que introdujiste.");
+        }
+
+        posicion = parseInt(prompt("Inténtalo de nuevo. ¿En qué posición empieza 'JavaScript'?"));
+      }
+
+      // Cuando acierta
+      intentos++;
+      alert(`¡Enhorabuena! Has acertado en ${intentos} intento(s).`);
+
+      // Mostrar el resto del texto después de "JavaScript"
+      let resto = texto.substring(posicionReal + "JAVASCRIPT".length);
+      alert(`El resto del texto después de "JavaScript" es:\n"${resto.trim()}"`);
+    } else {
+      alert(" La cadena debe contener la palabra 'JavaScript'.");
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>

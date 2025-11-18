@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Fechas con Arrays y Date</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        /*
+        (Arrays y Date)
+        Crea un script que reciba tantas cadenas de texto con fechas como el usuario desee.
+        El formato puede ser flexible (ej: "2025-10-20", "Oct 20 2025 10:30", etc.)
+
+        Por cada fecha:
+        - Se valida si es una fecha válida.
+        - Si es válida:
+            * Se muestra en formato "dd de mm de yyyy a las hh:mm".
+            * Se muestra la diferencia con la fecha actual en días y segundos.
+            * Se suman 5 días a la fecha y se muestra el resultado.
+            * Verificar si cada fecha es en fin de semana. Nuevo
+            * Verificar si cada hora transcurre entre las 00:00 y las 08:00. nuevo
+            
+        */
+
+        // Array donde se guardan todas las fechas introducidas
+        let fechas = [];
+        let continuar = true;
+
+        // Bucle para pedir fechas hasta que el usuario cancele
+        while (continuar) {
+            let entrada = prompt("Introduce una fecha (puedes escribir, por ejemplo: 2025-10-20 o 20 Oct 2025 10:30):");
+            if (entrada) {
+                fechas.push(entrada);
+            } else {
+                alert("Debes introducir al menos una fecha válida.");
+            }
+
+            continuar = confirm("¿Quieres introducir otra fecha?");
+        }
+
+        // Recorremos todas las fechas almacenadas
+        for (let i = 0; i < fechas.length; i++) {
+            let cadena = fechas[i];
+            let fecha = new Date(cadena); // Intentar convertir a fecha
+
+            // Comprobamos si la fecha es válida
+            if (isNaN(fecha.getTime())) {
+                alert("La cadena \"" + cadena + "\" no es una fecha válida.");
+            } else {
+                // Mostrar la fecha formateada
+                let dia = fecha.getDate();
+                let mes = fecha.toLocaleString("es-ES", { month: "long" }); // nombre del mes
+                let anio = fecha.getFullYear();
+                let hora = fecha.getHours().toString().padStart(2, '0');
+                let minutos = fecha.getMinutes().toString().padStart(2, '0');
+
+                console.log("Fecha introducida: " + dia + " de " + mes + " de " + anio + " a las " + hora + ":" + minutos);
+
+                // Calcular la diferencia con la fecha actual
+                let ahora = new Date();
+                let diferenciaMS = fecha - ahora;
+                let diferenciaSegundos = Math.round(diferenciaMS / 1000);
+                let diferenciaDias = Math.round(diferenciaMS / (1000 * 60 * 60 * 24));
+
+                console.log("Diferencia con la fecha actual:");
+                console.log("   → " + diferenciaDias + " días");
+                console.log("   → " + diferenciaSegundos + " segundos");
+
+                // Sumar 5 días a la fecha
+                let fechaMas5 = new Date(fecha);
+                fechaMas5.setDate(fechaMas5.getDate() + 5);
+
+                let dia5 = fechaMas5.getDate();
+                let mes5 = fechaMas5.toLocaleString("es-ES", { month: "long" });
+                let anio5 = fechaMas5.getFullYear();
+                let hora5 = fechaMas5.getHours().toString().padStart(2, '0');
+                let minutos5 = fechaMas5.getMinutes().toString().padStart(2, '0');
+
+                console.log("Fecha + 5 días: " + dia5 + " de " + mes5 + " de " + anio5 + " a las " + hora5 + ":" + minutos5);
+                console.log("-----------------------------------");
+
+                //verificar si la fecha es fin de semana
+                let fin_semana = fechas.getDay();
+
+
+                if (fin_semana == 0 || fin_semana == 6) {
+                    console.log("Es fin de semana.");
+                    console.log("-----------------------------------");
+
+                } else {
+                    console("No es fin de semana");
+                    console.log("-----------------------------------");
+
+                }
+
+                //Verificar si cada hora transcurre entre las 00:00 y las 08:00
+                let hora_verify = fechas.getHours();
+                if (hora_verify >= 0 && hora_verify <= 8) {
+                    console.log("la Hora introducida transcurre entre las  00:00 y las 08:00 ");
+                } else {
+                    console.log("la Hora introducida no transcurre entre las  00:00 y las 08:00");
+                }
+
+            }
+        }
+
+        alert("Revisa la consola para ver los resultados.");
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
