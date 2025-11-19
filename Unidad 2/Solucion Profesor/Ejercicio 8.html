@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+  <script>
+    // Solicita el número
+    let numero = prompt("Introduce un número entre 1 y 5:");
+
+    // Cuidado con la conversión ya que el switch también comprueba el tipo
+    numero = Number(numero);
+
+    // Verifica si es un número válido
+    if (isNaN(numero)) {
+      alert("Error: No has introducido un número.");
+    } else {
+      // Usamos switch para traducir. 
+      switch (numero) {
+        case 1:
+          alert("One");
+          break;
+        case 2:
+          alert("Two");
+          break;
+        case 3:
+          alert("Three");
+          break;
+        case 4:
+          alert("Four");
+          break;
+        case 5:
+          alert("Five");
+          break;
+        default:
+          alert("Error: El número debe estar entre 1 y 5.");
+      }
+    }
+  </script>
+</body>
+</html>

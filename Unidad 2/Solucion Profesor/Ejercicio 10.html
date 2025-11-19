@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+  <script>
+    const PIN_CORRECTO = 1234;
+    
+    // Contador de intentos
+    let intentos = 0;
+
+    while (intentos < 3) {
+      // Es un número con el operador unario +
+      let entrada = +prompt("Introduce tu PIN:");
+
+      // Comprobación del pin
+      if (entrada === PIN_CORRECTO) {
+        alert("Bienvenido al sistema.");
+        
+        // Si es correcto salimos del bucle
+        break;
+      } else {
+        intentos++;
+        if (intentos < 3) {
+          alert(`PIN incorrecto. Te quedan ${3 - intentos} intento(s).`);
+        }
+      }
+    }
+
+    // Alternativa con do while
+    /* do {
+      entrada = +prompt("Introduce tu PIN:");
+
+      if (entrada === PIN_CORRECTO) {
+        alert("Bienvenido al sistema.");
+        break; // Salir si es correcto
+      } else {
+        intentos++;
+        if (intentos < 3) {
+          alert(`PIN incorrecto. Te quedan ${3 - intentos} intento(s).`);
+        }
+      }
+    } while (intentos < 3);*/
+
+    if (intentos === 3) {
+      alert("Tarjeta bloqueada");
+    }
+  </script>
+</body>
+</html>

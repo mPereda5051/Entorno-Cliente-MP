@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+  <script>
+    const MULTIPLO_CORTE = 3; // Si el producto es múltiplo de este valor, se corta esa tabla
+
+    document.write("<h2>Tabla de multiplicar especial</h2>");
+
+    for (let i = 1; i <= 10; i++) {
+      // Confirmar si el usuario desea continuar
+      if (!confirm(`¿Quieres ver la tabla del ${i}?`)){
+        break;
+      }
+      
+      document.write(`<strong>Tabla del ${i}</strong><br>`);
+
+      for (let j = 1; j <= 10; j++) {
+        let producto = i * j;
+
+        // Si se alcanza el múltiplo indicado se vuelve al bucle externo
+        if (producto % MULTIPLO_CORTE === 0) {
+          break; // Otra opción es añadir una etiqueta al bucle y usar continue
+        }
+
+        document.write(`${i} × ${j} = ${producto}<br>`);
+      }
+
+      document.write("<br>"); // Separación entre tablas
+    }
+  </script>
+</body>
+</html>

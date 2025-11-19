@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+  <script>
+
+    // Cuidado con terminar con ; el bloque de código porque estamos declarando una variable de tipo función
+    let ask = (question, yes, no) => {
+      if (confirm(question)){
+        yes();    
+      } else {
+        no();
+      } 
+    };
+
+    ask(
+      "Do you agree?",
+      () => alert("You agreed."),
+      () => alert("You canceled the execution.")
+    );
+  </script>
+</body>
+</html>

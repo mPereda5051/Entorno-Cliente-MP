@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+  <script>
+    // Pedimos la nota y convertimos a número
+    let nota = prompt("Introduce tu nota (de 0 a 10):");
+    nota = Number(nota);
+
+    if (isNaN(nota) || nota < 0 || nota > 10) {
+      alert("Por favor, introduce una nota válida entre 0 y 10.");
+    } else if (nota === 0) {
+      alert("NO PRESENTADO");
+    } else if (nota < 5) {
+      alert("SUSPENSO");
+    } else if (nota < 6) {
+      alert("APROBADO");
+    } else if (nota < 7) {
+      alert("BIEN");
+    } else if (nota < 9) {
+      alert("NOTABLE");
+    } else {
+      alert("SOBRESALIENTE");
+    }
+	
+	/* Sintaxis alternativa 	
+	(isNaN(nota) || nota < 0 || nota > 10)? alert("Por favor, introduce una nota válida entre 0 y 10.")
+	  : (nota === 0) ? alert("NO PRESENTADO")
+	  : (nota < 5) ? alert("SUSPENSO")
+	  : (nota < 6) ? alert("APROBADO")
+	  : (nota < 7) ? alert("BIEN")
+	  : (nota < 9) ? alert("NOTABLE")
+	  : alert("SOBRESALIENTE");
+	*/
+
+  </script>
+</body>
+</html>

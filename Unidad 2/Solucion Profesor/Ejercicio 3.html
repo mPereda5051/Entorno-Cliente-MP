@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+  <script>
+    let dato;
+
+    // Se pueden emplear comillas invertidas `` aunque se utilizan "" para que la solución sea más legible
+
+    // Paso 1: Variable vacía
+    alert("Tipo inicial (vacía): " + typeof dato);
+
+    // Paso 2: Pedir número (se guarda como string)
+    dato = prompt("Introduce un número:");
+    alert("Después de prompt (string): " + typeof dato + " | Valor: " + dato);
+
+    // Paso 3: Convertir a number
+    dato = Number(dato);
+    alert("Después de convertir a number: " + typeof dato + " | Valor: " + dato);
+
+    // Paso 4: Convertir a boolean
+    dato = Boolean(dato);
+    alert("Después de convertir a boolean: " + typeof dato + " | Valor: " + dato);
+  </script>
+</body>
+</html>

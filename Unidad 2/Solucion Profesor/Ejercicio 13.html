@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+  <script>
+    // Esta función también funcionaría dentro de "saludoPersonalizado" aunque habría que cambiar la lógica de las llamadas
+    function comprobarBlanco(cadena){
+      return (!isNaN(cadena) || cadena === "");
+    }
+
+    // Función tradicional con parámetros y validación
+    // No hace falta controlar mayúsculas o minúsculas
+    function saludoPersonalizado(nombre, genero="no especificado") {
+      if (genero === "masculino") {
+        return "Bienvenido, " + nombre;
+      } else if (genero === "femenino") {
+        return "Bienvenida, " + nombre;
+      } else {
+        return "Bienvenid@, " + nombre;
+      }
+    }
+
+    // Uso con prompt
+    let nombreUsuario = prompt("¿Cuál es tu nombre?");
+    let generoUsuario = prompt("¿Cuál es tu género? (en minúsculas masculino, femenino o en blanco si preferes no decirlo");
+
+    if (comprobarBlanco(nombreUsuario)){
+      alert("Por favor, introduce un nombre");      
+    } else {
+      // Se realiza la llamada con uno o dos parámetros en función del género
+      alert(comprobarBlanco(generoUsuario)?saludoPersonalizado(nombreUsuario):
+                                           saludoPersonalizado(nombreUsuario,generoUsuario));
+    }
+
+  </script>
+</body>
+</html>

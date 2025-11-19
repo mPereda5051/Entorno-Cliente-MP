@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+  <script>
+    // Paso 1: Simular la entrada del usuario
+    let input = prompt("Introduce tu nombre de usuario (puede estar vacío):");
+
+    // Paso 2: Fuentes alternativas. En un script real probablemente se cargaría de otro archivo
+    // Prueba a cambiar a undefined, null o false
+    const porDefecto = "Invitado";
+
+    // Esta otra fuente alternativa se añadiría a mano en nuestro sript
+    let respaldo = "Anónimo";
+
+    // Paso 3: Selección usando ?? (ignora solo null y undefined)
+    let usuarioConNullish = input ?? porDefecto ?? respaldo;
+
+    // Paso 4: Selección usando || (ignora '', 0, null, undefined, etc.)
+    let usuarioConOr = input || porDefecto || respaldo;
+
+    // Paso 5: Mostrar resultados y explicación
+    console.log("Nombre usando '??':", usuarioConNullish);
+    console.log("Nombre usando '||':", usuarioConOr);
+
+    document.write("Abre la consola (F12) para ver la comparación de resultados");
+  </script>
+</body>
+</html>

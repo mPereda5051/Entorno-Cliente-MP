@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+  <script>
+    // Pregunta 1: ¿Cuánto llevas contigo?
+    // Se convierte a número con operador unario +
+    let cantidad = +prompt("¿Cuánto llevas contigo?");
+
+    // Pregunta 2: ¿Eres sincero?
+    let sincero = confirm("¿Eres sincero?");
+
+    // Pregunta 3: ¿Qué responderías si te pregunto si puedes entrar?
+    let respuesta = prompt("¿Qué responderías si te pregunto si podrías entrar? (usa mayúsculas y cuidado con tildes y espacios)?");
+
+    // Evaluar las 3 condiciones
+    if (cantidad > 50 && sincero && respuesta === "SÍ") {
+      alert("Puedes entrar. Has respondido correctamente.");
+    } else {
+      alert("No puedes entrar. No has superado la prueba del sabio.");
+    }
+  </script>
+</body>
+</html>
