@@ -1,3 +1,8 @@
+//creamos las variables que ayudaran a abrir la puerta.
+
+let llave = false;
+let clave = false;
+
 //Objeto
 const codigo = Symbol("codigo");
 
@@ -28,26 +33,48 @@ const output = document.getElementById("output");
 //aañadimos lo que hace cada boton
 inspeccionar.addEventListener("click", ()=>{
     output.textContent = caja.observar();
+
+    //en caso de tener la llave, ya se puede saber la contraseña
+    let mensaje = caja.observar();
+
+    if(llave){
+        const valorCodigo = caja[codigo];
+        mensaje += "Vaya, ahora que lo miras bien hay un numero grabado en la parte interna de la caja, dice " + valorCodigo;
+        clave = true;
+    }
+
+    output.textContent = mensaje;
 })
 
-duplicar.addEventListener("click", () => {
-    const copia = structuredClone(caja);
+duplicar.addEventListener("click", () => {    
     output.textContent = "Aparecio un duende en la habitacion y te da una caja exactamente igual, no sirve de nada pero existe.";
+    const copia = structuredClone(caja);
 });
 
 buscar.addEventListener("click", () => {
     if (caja.compartimentoOculto.pista) {
         output.textContent = "Encuentras algo: " + caja.compartimentoOculto.contenido;
+        llave = true; //cambiamos el valor para decir que si tenemos la llave
+
     } else {
         output.textContent = "No encuentras nada...";
     }
 });
 
 abrir.addEventListener("click", () => {
-    output.textContent = "La puerta esta cerrada. Necesitas un código...";
+    //si tenemos las llave y la clave ya podemos abrir la puerta
+    if(llave && clave){
+        output.textContent = "¡Se abrio la puerta! ¡Rapido entra antes de que algo pase!";
+    }
+    else if(!llave){
+        output.textContent = "Falta la llave amigo, me temo que la puerta sigue cerrada";
+    }  else if(!clave){
+        output.textContent = "Falta la clave amigo, me temo que la puerta sigue cerrada";
+    } else{
+            output.textContent = "La puerta esta cerrada. Necesitas un código...";
+
+    }
+
 });
 
-//creamos las variables que ayudaran a abrir la puerta.
 
-let llave = true;
-let clave = true;
