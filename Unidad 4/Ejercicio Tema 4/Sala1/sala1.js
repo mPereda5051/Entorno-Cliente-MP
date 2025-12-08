@@ -53,7 +53,7 @@ duplicar.addEventListener("click", () => {
 
 buscar.addEventListener("click", () => {
     if (caja.compartimentoOculto.pista) {
-        output.textContent = "Encuentras algo: " + caja.compartimentoOculto.contenido;
+        output.textContent = "Encuentras algo: " + caja.compartimentoOculto.contenido + " Me daria prisa, sientes que te observan";
         llave = true; //cambiamos el valor para decir que si tenemos la llave
 
     } else {
