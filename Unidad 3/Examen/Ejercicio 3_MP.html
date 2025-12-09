@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+
+        window.onload = function () {
+            const boton = document.getElementById("submit")
+            boton.addEventListener("click", function () {
+                let domicilio = document.getElementById("domicilio").value.trim();
+                let piso = document.getElementById("numero").value.trim();
+                let observaciones = document.getElementById("observaciones").value.trim();
+                let mensaje = "Error: tienes que por lo menos rellenar un campo";
+                let mensaje2 = "Datos cargados correctamente";
+                let entrada = document.getElementsByName("formulario");
+
+
+                if (!domicilio) {
+                    document.getElementsByTagName("p")[0].textContent = mensaje;
+                    mensaje.style.color = "red";
+
+                } else {
+                    document.getElementsByTagName("p")[0].textContent = mensaje2;
+                    if (entrada) {
+                        let datos = [];
+                        datos.push(entrada);
+                    }
+
+                    const popup = window.open("pop-up_Ejercicio3_MP.html", "ventana", "width=400,height=300");
+                    popup.addEventListener("DOMContentLoaded", () => {
+                        datos.forEach(data => {
+                            popup.document.getElementsByTagName("p")[0].textContent = datos;
+                        });
+
+
+                    });
+
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Introduce tu direccion</h1><br><br>
+
+    <form name="formulario">
+        <input type="text" placeholder="Domicilio" id="domicilio"> <br>
+        <input type="text" placeholder="Numero y piso" id="numero"><br>
+        <input type="text" placeholder="Observaciones" id="observaciones"><br>
+        <button id="submit">Enviar direccion</button>
+    </form>
+
+    <p id="mensaje"></p>
+</body>
+
+</html>

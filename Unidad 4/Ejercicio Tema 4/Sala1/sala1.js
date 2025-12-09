@@ -22,6 +22,9 @@ let caja = {
     }
 };
 
+//mostar symbol
+console.log(codigo);
+console.log(caja[codigo]);
 //obtenemos los elementos del HTML
 const inspeccionar = document.getElementById("inspeccionar");
 const duplicar = document.getElementById("duplicar");
@@ -49,6 +52,8 @@ inspeccionar.addEventListener("click", ()=>{
 duplicar.addEventListener("click", () => {    
     output.textContent = "Aparecio un duende en la habitacion y te da una caja exactamente igual, no sirve de nada pero existe.";
     const copia = structuredClone(caja);
+    console.log(caja);
+    console.log(copia);
 });
 
 buscar.addEventListener("click", () => {
@@ -56,7 +61,10 @@ buscar.addEventListener("click", () => {
         output.textContent = "Encuentras algo: " + caja.compartimentoOculto.contenido + " Me daria prisa, sientes que te observan";
         llave = true; //cambiamos el valor para decir que si tenemos la llave
 
-    } else {
+    } else if(llave){
+        output.textContent="No parece que encuentres algo mas en el compartimiento";
+    }
+    else {
         output.textContent = "No encuentras nada...";
     }
 });
