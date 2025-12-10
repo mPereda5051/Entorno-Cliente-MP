@@ -51,7 +51,9 @@ inspeccionar.addEventListener("click", ()=>{
 
 duplicar.addEventListener("click", () => {    
     output.textContent = "Aparecio un duende en la habitacion y te da una caja exactamente igual, no sirve de nada pero existe.";
-    const copia = structuredClone(caja);
+    
+    let copia = Object.assign({},caja);
+    copia.compartimentoOculto= structuredClone(caja.compartimentoOculto);
     console.log(caja);
     console.log(copia);
 });
