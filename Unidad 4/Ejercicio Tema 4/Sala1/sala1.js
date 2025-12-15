@@ -75,6 +75,10 @@ abrir.addEventListener("click", () => {
     //si tenemos las llave y la clave ya podemos abrir la puerta
     if(llave && clave){
         output.textContent = "¡Se abrio la puerta! ¡Rapido entra antes de que algo pase!";
+
+    setTimeout(()=>{
+        window.location.href = "Sala 2/sala2.html";
+    }, 1500);
     }
     else if(!llave){
         output.textContent = "Falta la llave amigo, me temo que la puerta sigue cerrada";
