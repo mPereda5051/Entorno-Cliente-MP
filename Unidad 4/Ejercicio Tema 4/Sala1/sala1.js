@@ -34,13 +34,13 @@ const abrir = document.getElementById("abrir");
 const output = document.getElementById("output");
 
 //aañadimos lo que hace cada boton
-inspeccionar.addEventListener("click", ()=>{
+inspeccionar.addEventListener("click", () => {
     output.textContent = caja.observar();
 
     //en caso de tener la llave, ya se puede saber la contraseña
     let mensaje = caja.observar();
 
-    if(llave){
+    if (llave) {
         const valorCodigo = caja[codigo];
         mensaje += "Vaya, ahora que lo miras bien hay un numero grabado en la parte interna de la caja, dice " + valorCodigo;
         clave = true;
@@ -49,11 +49,11 @@ inspeccionar.addEventListener("click", ()=>{
     output.textContent = mensaje;
 })
 
-duplicar.addEventListener("click", () => {    
+duplicar.addEventListener("click", () => {
     output.textContent = "Aparecio un duende en la habitacion y te da una caja exactamente igual, no sirve de nada pero existe.";
-    
-    let copia = Object.assign({},caja);
-    copia.compartimentoOculto= structuredClone(caja.compartimentoOculto);
+
+    let copia = Object.assign({}, caja);
+    copia.compartimentoOculto = structuredClone(caja.compartimentoOculto);
     console.log(caja);
     console.log(copia);
 });
@@ -63,8 +63,8 @@ buscar.addEventListener("click", () => {
         output.textContent = "Encuentras algo: " + caja.compartimentoOculto.contenido + " Me daria prisa, sientes que te observan";
         llave = true; //cambiamos el valor para decir que si tenemos la llave
 
-    } else if(llave){
-        output.textContent="No parece que encuentres algo mas en el compartimiento";
+    } else if (llave) {
+        output.textContent = "No parece que encuentres algo mas en el compartimiento";
     }
     else {
         output.textContent = "No encuentras nada...";
@@ -73,15 +73,19 @@ buscar.addEventListener("click", () => {
 
 abrir.addEventListener("click", () => {
     //si tenemos las llave y la clave ya podemos abrir la puerta
-    if(llave && clave){
+    if (llave && clave) {
         output.textContent = "¡Se abrio la puerta! ¡Rapido entra antes de que algo pase!";
+
+        setTimeout(() => {
+            window.location.href = "../Sala2/sala2.html";
+        }, 1500);
     }
-    else if(!llave){
+    else if (!llave) {
         output.textContent = "Falta la llave amigo, me temo que la puerta sigue cerrada";
-    }  else if(!clave){
+    } else if (!clave) {
         output.textContent = "Falta la clave amigo, me temo que la puerta sigue cerrada";
-    } else{
-            output.textContent = "La puerta esta cerrada. Necesitas un código...";
+    } else {
+        output.textContent = "La puerta esta cerrada. Necesitas un código...";
 
     }
 
