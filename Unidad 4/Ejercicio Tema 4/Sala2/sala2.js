@@ -33,8 +33,11 @@ function revisar(idLibro) {
 
     //guardamos el elibro en el array
     libros.push(idLibro);
+    //organizar la lista
+    //Muestra por consola algún array en el que hayas realizado alguna modificación con los métodos de arrays.
     let listasort = libros.sort();
     console.log(listasort);
+    //muestra el tamaño del id del libro cada vez que lees un libro
     let tamaño = libros.map(item => item.length);
     alert(tamaño);
 
@@ -66,10 +69,12 @@ libro4.addEventListener("click", () => {
     revisar("libro4");
 });
 
+//Recorrer el Map y mostrarlo por pantalla con un alert usando desestructuracion 
 des.addEventListener("click", () => {
     for (let [key, value] of biblioteca) {
         alert(`${key}:${value}`);
     }
+    console.log(biblioteca);
 })
 
 
