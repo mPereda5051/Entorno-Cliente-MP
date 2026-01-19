@@ -13,7 +13,14 @@ export class Artefacto{
      }
 
      usar(){
+         if (this.#energia <= 0) {
+            return `${this.nombre} está completamente descargado.`;
+        }
         this.#energia -=20;
-        return `${this.nombre} ha perdido brillo, sientes que a perdido un 20% de su poder.`;
+        return `${this.nombre} ha perdido brillo, Energía restante: ${this.#energia}%.`;
+     }
+
+     tieneEnergia(){
+        return this.#energia > 0;
      }
 }
