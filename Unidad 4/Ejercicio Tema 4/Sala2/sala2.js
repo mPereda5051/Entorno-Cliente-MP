@@ -84,6 +84,9 @@ abrir.addEventListener("click", () => {
     const pistaArray = Array.from(pistas);
     if (pistaArray.length >= 4) {
         output.textContent = "Con la informacion que tienes descifras el puzzle le la puerta y esta se abre.";
+           setTimeout(() => {
+            window.location.href = "../Sala3/sala3.html";
+        }, 1500);
     } else {
         output.textContent = "La puerta no abre, sientes que te observan , date prisa";
     }
