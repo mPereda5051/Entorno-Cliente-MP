@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Sala 3</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- <style>
+    <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #0f172a;
@@ -20,7 +21,7 @@
             padding: 20px;
             max-width: 800px;
             margin: auto;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
         }
 
         h1 {
@@ -60,17 +61,18 @@
             min-height: 80px;
         }
     </style>
+    <script type="module" src="salaMain.js"></script>
 </head>
 
 <body>
     <div class="card">
 
-        <h1>Sala 3 — El Laboratorio Arcano</h1>
+        <h1>Sala 3 — El Laboratorio</h1>
 
         <div class="section instructions">
             <h3>Descripción</h3>
             <p>
-                Te encuentras en un laboratorio arcano repleto de artefactos antiguos.
+                Te encuentras en una sala repleta de artefactos antiguos.
                 Algunos parecen reaccionar a tu presencia.
                 Solo comprendiendo su funcionamiento podrás abrir la puerta final.
             </p>
@@ -79,8 +81,10 @@
         <div class="section">
             <h3>Artefactos</h3>
             <button id="artefacto1">Cristal de energía</button>
-            <button id="artefacto2">Runa antigua</button>
-            <button id="artefacto3">Llave arcana</button>
+            <button id="artefacto2">Cilindro Magico</button>
+            <button id="artefacto3">Llave Oxidada</button>
+            <button id="artefacto4">Colgante mistico</button>
+
         </div>
 
         <div class="section">
@@ -90,4 +94,10 @@
 
         <div class="section">
             <h3>Resultado</h3>
-            <di
+            <div class="output" id="output"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>

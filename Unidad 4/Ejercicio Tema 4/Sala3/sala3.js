@@ -1,19 +1,29 @@
-export class Artefacto{
-     #energia;
+export class Artefacto {
+   #energia;
 
-     constructor(nombre, poder){
-        this.nombre = nombre;
-        this.poder = poder;
-        this.#energia = 100;
-     }
+   constructor(nombre, poder) {
+      this.nombre = nombre;
+      this.poder = poder;
+      this.#energia = 0;
+   }
 
 
-     describir(){
-        return `Es un objeto extraño, con solo agarrarlo sabes su nombre, es ${this.nombre}, ademas sientes que es poderoso si lo describiras en numeros dirias que tiene un aproximado de ${this.poder}.`
-     }
+   describir() {
+      return `Es un objeto extraño, con solo agarrarlo sabes su nombre, es ${this.nombre}, ademas sientes que es poderoso si lo describiras en numeros dirias que tiene un aproximado de ${this.poder}.`
+   }
+   gastarEnergia(cantidad) {
+      if (this.#energia < cantidad) {
+         return false;
+      }
+      this.#energia -= cantidad;
+      return true;
+   }
 
-     usar(){
-        this.#energia -=20;
-        return `${this.nombre} ha perdido brillo, sientes que a perdido un 20% de su poder.`;
-     }
+   recargar(cantidad) {
+      this.#energia += cantidad;
+   }
+
+   tieneEnergia() {
+      return this.#energia > 0;
+   }
 }
