@@ -1,4 +1,4 @@
-import { Artefacto } from "./sala3";
+import { Artefacto } from "./sala3.js";
 
 export class Room {
     constructor(output) {
@@ -6,15 +6,18 @@ export class Room {
         this.artefacto = null;
 
         this.artefactos = {
-            cristal: new Artefacto("Cristal de energía", 50, "energia"),
-            cilindro: new Artefacto("Cilindro mágico", 70, "canalizador"),
-            llave: new Artefacto("Llave oxidada", 10, "mecanico")
+            cristal: new Artefacto("Cristal de energía", 0, "energia"),
+            cilindro: new Artefacto("Cilindro mágico", 0, "canalizador"),
+            llave: new Artefacto("Llave oxidada", 5, "mecanico"),
+            colgante: new Artefacto("Colgante mistico", 5, "canalizador")
         };
     }
-
+    mostrar(text) {
+        this.output.textContent = text;
+    }
     seleccionar(nombre) {
         this.artefacto = this.artefactos[nombre];
-        this.mostrar(this.artefacto.describir());
+        this.mostrar(this.artefacto.describir()); r
     }
 
     usar() {
@@ -23,7 +26,15 @@ export class Room {
             return;
         }
 
-        this.mostrar(this.artefacto.usar());
+        if (this.artefactos["nombre"] == "Llave oxidada") {
+            this.mostrar(this.artefacto.usarLlave());
+        } if (his.artefactos["nombre"] == "Colgante mistico") {
+            this.mostrar(this.artefacto.usarColgante());
+        } else {
+            this.mostrar(this.artefacto.usar());
+
+        }
+
     }
 
     abrir() {
@@ -33,11 +44,9 @@ export class Room {
         if (cristal.tieneEnergia() && cilindro.tieneEnergia()) {
             this.mostrar("Felicidades, lograste completar el puzzle. La puerta se abre.");
         } else {
-            this.mostrar("La puerta no se mueve, falta energía.");
+            this.mostrar("La puerta no se mueve, pero notas que el cilindro y el cristal reaccionan ante la puerta.");
         }
     }
 
-    mostrar(texto) {
-        this.output.textContent = texto;
-    }
+
 }
