@@ -5,6 +5,8 @@ const output = document.getElementById("output");
 const btnCristal = document.getElementById("artefacto1");
 const btnCilindro = document.getElementById("artefacto2");
 const btnLlave = document.getElementById("artefacto3");
+const btnColgante = document.getElementById("artefacto4");
+
 
 const btnUsar = document.getElementById("usar");
 const btnAbrir = document.getElementById("abrir");
@@ -21,6 +23,9 @@ btnCilindro.addEventListener("click", () => {
 
 btnLlave.addEventListener("click", () => {
     sala3.seleccionar("llave");
+});
+btnColgante.addEventListener("click", () => {
+    sala3.seleccionar("colgante");
 });
 
 btnUsar.addEventListener("click", () => {

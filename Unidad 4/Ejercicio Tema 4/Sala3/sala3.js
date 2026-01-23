@@ -11,27 +11,16 @@ export class Artefacto {
    describir() {
       return `Es un objeto extraño, con solo agarrarlo sabes su nombre, es ${this.nombre}, ademas sientes que es poderoso si lo describiras en numeros dirias que tiene un aproximado de ${this.poder}.`
    }
-
-   usar() {
-      if (this.#energia <= 0) {
-         return `${this.nombre} está completamente descargado.`;
+   gastarEnergia(cantidad) {
+      if (this.#energia < cantidad) {
+         return false;
       }
-      this.#energia -= 5;
-      return `${this.nombre} ha perdido brillo, Energía restante: ${this.#energia}%.`;
+      this.#energia -= cantidad;
+      return true;
    }
-   usarLlave(){
-      if (this.#energia <=0){
-         return `${this.nombre} está completamente descargado.`;
 
-      }this.#energia -= 5;
-      return `${this.nombre} ha perdido brillo, Energía restante: ${this.#energia}%.`;
-   }
-   usarColgante(){
-      if (this.#energia <=0){
-         return `${this.nombre} está completamente descargado.`;
-
-      }this.#energia -= 5;
-      return `${this.nombre} ha perdido brillo, Energía restante: ${this.#energia}%.`;
+   recargar(cantidad) {
+      this.#energia += cantidad;
    }
 
    tieneEnergia() {

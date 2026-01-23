@@ -41,9 +41,15 @@ inspeccionar.addEventListener("click", () => {
     let mensaje = caja.observar();
 
     if (llave) {
-        const valorCodigo = caja[codigo];
-        mensaje += "Vaya, ahora que lo miras bien hay un numero grabado en la parte interna de la caja, dice " + valorCodigo;
-        clave = true;
+        try {
+            const valorCodigo = caja[codigo];
+            mensaje += "Vaya, ahora que lo miras bien hay un numero grabado en la parte interna de la caja, dice " + valorCodigo;
+            clave = true;
+        } catch (error) {
+            mensaje += " Algo parece fallar...";
+            console.error(error);
+        }
+
     }
 
     output.textContent = mensaje;
