@@ -31,37 +31,23 @@ export class Room {
             return;
         }
 
-        if (this.artefacto.nombre === "Llave oxidada") {
-            this.llaveUsada = true;
-            this.mostrar("Has activado la llave. Algo parece iluminarse...");
-            this.reload();
-            return;
+        if (this.artefactos["nombre"] == "Llave oxidada") {
+            this.mostrar(this.artefacto.usarLlave());
+        } if (his.artefactos["nombre"] == "Colgante mistico") {
+            this.mostrar(this.artefacto.usarColgante());
+        } else {
+            this.mostrar(this.artefacto.usar());
+
         }
 
-        if (this.artefacto.nombre === "Colgante mistico") {
-            const mensaje = this.artefacto.canalizar();
-              this.colganteUsado = true; 
-            this.mostrar(mensaje);
-            this.reload();
-            return;
-        }
-
-
-
-        this.mostrar("Este artefacto no hace nada por sí solo.");
     }
-
 
     abrir() {
         const cristal = this.artefactos.cristal;
         const cilindro = this.artefactos.cilindro;
 
         if (cristal.tieneEnergia() && cilindro.tieneEnergia()) {
-            this.mostrar("Felicidades, lograste completar el puzzle. La puerta se abre, ves la siguiente sala.... y encuentras una caja en el suelo.");
-               setTimeout(() => {
-            window.location.href = "../Sala1/sala1.html";
-        }, 1500);
-
+            this.mostrar("Felicidades, lograste completar el puzzle. La puerta se abre.");
         } else {
             this.mostrar("La puerta no se mueve, pero notas que el cilindro y el cristal reaccionan ante la puerta.");
         }
