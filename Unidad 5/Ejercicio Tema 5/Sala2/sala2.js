@@ -45,7 +45,7 @@ function revisar(idLibro) {
     // console.log(listasort);
     //muestra el tamaño del id del libro cada vez que lees un libro
     let tamaño = libros.map(item => item.length);
-    alert(tamaño);
+    //alert(tamaño);
 
     //usamos el map para obtener la pista
     const pista = biblioteca.get(idLibro);
@@ -55,6 +55,14 @@ function revisar(idLibro) {
 
     output.textContent = pista;
 }
+
+//Tema 5 handleEvent
+const manejadorEvento = {
+    handleEvent(evento){
+        const idLibro = evento.target.id;
+        revisar(idLibro);
+    }
+};
 
 // Unidad 5- eventp de raton con coordenadas
 const bibliotecaCoordenada = document.getElementById("biblioteca");
@@ -68,22 +76,10 @@ bibliotecaCoordenada.addEventListener("mousemove", (evento) => {
 
 })
 
-//añadimos funcionalidad a los botones
-libro1.addEventListener("click", () => {
-    revisar("libro1");
-});
-
-libro2.addEventListener("click", () => {
-    revisar("libro2");
-});
-
-libro3.addEventListener("click", () => {
-    revisar("libro3");
-});
-
-libro4.addEventListener("click", () => {
-    revisar("libro4");
-});
+libro1.addEventListener("click", manejadorEvento);
+libro2.addEventListener("click", manejadorEvento);
+libro3.addEventListener("click", manejadorEvento);
+libro4.addEventListener("click", manejadorEvento);
 
 
 
