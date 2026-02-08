@@ -56,9 +56,10 @@ function revisar(idLibro) {
     output.textContent = pista;
 }
 
-//Tema 5 handleEvent
+//Tema 5 handleEvent + control burbuja
 const manejadorEvento = {
     handleEvent(evento){
+        evento.stopPropagation();
         const idLibro = evento.target.id;
         revisar(idLibro);
     }
@@ -75,6 +76,11 @@ bibliotecaCoordenada.addEventListener("mousemove", (evento) => {
 
 
 })
+
+//Unidad 5 -  burbuja
+bibliotecaCoordenada.addEventListener("click", () => {
+    console.log("click detectado");
+});
 
 libro1.addEventListener("click", manejadorEvento);
 libro2.addEventListener("click", manejadorEvento);
