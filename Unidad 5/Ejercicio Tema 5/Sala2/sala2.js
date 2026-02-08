@@ -87,7 +87,36 @@ libro2.addEventListener("click", manejadorEvento);
 libro3.addEventListener("click", manejadorEvento);
 libro4.addEventListener("click", manejadorEvento);
 
+//Unidad 5 -validacion alfanumerica
 
+const codigoInput = document.getElementById("input"); 
+
+codigoInput.addEventListener("keypress", (evento) => {
+    const caracter = evento.key;
+
+    //Letras y numeros
+    const esAlfanumerico = /^[a-zA-Z0-9]$/.test(caracter);
+
+    if (!esAlfanumerico){
+        evento.preventDefault();
+        console.log("caracter no permitido: ", caracter)
+    }
+
+});
+
+//Unidad 5- deteccion de teclas especiales
+
+document.addEventListener("keydown", (evento) =>{
+    if (evento.ctrlKey){
+        console.log("Tecla CTRL pulsada");
+    }
+     if (evento.shiftKey){
+        console.log("Tecla SHIFT pulsada");
+    }
+     if (evento.key === "Enter"){
+        console.log("Tecla ENTER pulsada");
+    }
+});
 
 
 abrir.addEventListener("click", () => {
