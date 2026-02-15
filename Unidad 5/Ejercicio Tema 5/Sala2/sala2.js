@@ -94,8 +94,8 @@ window.addEventListener("resize", () => {
     console.log(`Ancho ventana: ${window.innerWidth}px`);
 });
 
-window.addEventListener("resize", () => {
-    console.log(`Ancho ventana: ${window.innerWidth}px`);
+window.addEventListener("scroll", () => {
+    console.log(`Scroll vertical: ${window.scrollY}px`);
 });
 
 //Unidad 5 -validacion alfanumerica

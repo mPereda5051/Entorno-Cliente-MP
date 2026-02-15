@@ -1,108 +1,90 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <script src='login.js' defer></script>
     <style>
-     /* Centrar todo vertical y horizontalmente */
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: #e2e8f0;
-    margin: 0;
-    padding: 20px;
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-/* Carta principal */
-.card {
-    background: #1e293b;
-    border-radius: 16px;
-    padding: 30px;
-    width: 100%;
-    max-width: 420px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-}
+        h3 {
+            text-align: center;
+            color: #93c5fd;
+            margin-bottom: 20px;
+        }
 
-.card:hover {
-    transform: translateY(-4px);
-}
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: none;
+            background: #0f172a;
+            color: #e2e8f0;
+            outline: none;
+            transition: 0.3s;
+        }
 
-/* Título */
-h3 {
-    text-align: center;
-    color: #93c5fd;
-    margin-bottom: 20px;
-}
+        input:focus {
+            box-shadow: 0 0 0 2px #93c5fd;
+        }
 
-/* Inputs */
-input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: none;
-    background: #0f172a;
-    color: #e2e8f0;
-    outline: none;
-    transition: 0.3s;
-}
+        #loginForm button {
+            width: 100%;
+            padding: 12px;
+            background: #2563eb;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-input:focus {
-    box-shadow: 0 0 0 2px #93c5fd;
-}
+        #loginForm button:hover {
+            background: #1d4ed8;
+        }
 
-/* Botón login */
-#loginForm button {
-    width: 100%;
-    padding: 12px;
-    background: #2563eb;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#loginForm button:hover {
-    background: #1d4ed8;
-}
-
-/* Mensaje login */
-#loginMensaje {
-    margin-top: 10px;
-    text-align: center;
-    font-weight: bold;
-}
-
+        #loginMensaje {
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
     </style>
 </head>
+
 <body>
-    <div class="section">
-    <h3>Login de acceso</h3>
+    <div>
+        <h3>Login</h3>
 
-    <form id="loginForm">
-        <div>
-            <input type="text" id="usuario" placeholder="Usuario">
-        </div>
-        <div>
-            <input type="password" id="password" placeholder="Contraseña">
-        </div>
-        <button type="submit">Iniciar sesión</button>
-    </form>
+        <form id="loginForm">
+            <div>
+                <input type="text" id="usuario" placeholder="Usuario">
+            </div>
+            <div>
+                <input type="password" id="password" placeholder="Contraseña">
+            </div>
+            <button type="submit">Iniciar sesión</button>
+            <div id="loginMensaje"></div>
 
-    <div id="loginMensaje"></div>
-</div>
+        </form>
 
+    </div>
 </body>
+
 </html>
