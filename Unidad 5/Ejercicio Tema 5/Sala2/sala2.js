@@ -79,7 +79,7 @@ bibliotecaCoordenada.addEventListener("mousemove", (evento) => {
 
 })
 
-//Unidad 5 -  burbuja
+//Unidad 5 -  burbuja revisas
 bibliotecaCoordenada.addEventListener("click", () => {
     console.log("click detectado");
 });
@@ -89,6 +89,14 @@ libro2.addEventListener("click", manejadorEvento);
 libro3.addEventListener("click", manejadorEvento);
 libro4.addEventListener("click", manejadorEvento);
 
+//Unidad 5 -Eventos
+window.addEventListener("resize", () => {
+    console.log(`Ancho ventana: ${window.innerWidth}px`);
+});
+
+window.addEventListener("resize", () => {
+    console.log(`Ancho ventana: ${window.innerWidth}px`);
+});
 
 //Unidad 5 -validacion alfanumerica
 
