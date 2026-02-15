@@ -29,6 +29,8 @@ function tamaño(evento) {
 
 const output = document.getElementById("output");
 
+
+
 //funcion para revisar el libro
 function revisar(idLibro) {
     if (libros.includes(idLibro)) {
@@ -87,6 +89,7 @@ libro2.addEventListener("click", manejadorEvento);
 libro3.addEventListener("click", manejadorEvento);
 libro4.addEventListener("click", manejadorEvento);
 
+
 //Unidad 5 -validacion alfanumerica
 
 const codigoInput = document.getElementById("input"); 
@@ -139,3 +142,23 @@ libro2.addEventListener("mouseenter", tamaño);
 libro3.addEventListener("mouseenter", tamaño);
 libro4.addEventListener("mouseenter", tamaño);
 
+//unidad 5- drag and drop
+
+const drop = document.getElementById("drop");
+
+[libro1,libro2,libro3,libro4].forEach(libro => {
+    libro.addEventListener("dragstart", (evento) => {
+        evento.dataTransfer.setData("text", evento.target.id);
+    });
+});
+
+drop.addEventListener("dragover", (evento) =>{
+    evento.preventDefault();
+});
+
+drop.addEventListener("drop", (evento) => {
+    evento.preventDefault();
+    const idLibro= evento.dataTransfer.getData("text");
+    drop.textContent = `Has soltado ${idLibro}`;
+
+})
