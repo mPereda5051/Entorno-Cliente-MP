@@ -60,8 +60,7 @@ function revisar(idLibro) {
 
 //Tema 5 handleEvent + control burbuja
 const manejadorEvento = {
-    handleEvent(evento){
-        evento.stopPropagation();
+    handleEvent(evento) {
         const idLibro = evento.target.id;
         revisar(idLibro);
     }
@@ -80,19 +79,20 @@ bibliotecaCoordenada.addEventListener("mousemove", (evento) => {
 })
 
 //Unidad 5 -  burbuja revisas
-bibliotecaCoordenada.addEventListener("click", () => {
-    console.log("click detectado");
+bibliotecaCoordenada.addEventListener("click", (evento) => {
+    const idLibro = evento.target.id;
+
+    if (idLibro.startsWith("libro")) {
+        revisar(idLibro);
+    }
 });
 
-libro1.addEventListener("click", manejadorEvento);
-libro2.addEventListener("click", manejadorEvento);
-libro3.addEventListener("click", manejadorEvento);
-libro4.addEventListener("click", manejadorEvento);
 
 //Unidad 5 -Eventos
 window.addEventListener("resize", () => {
-    console.log(`Ancho ventana: ${window.innerWidth}px`);
-});
+    console.log(`Ancho ventana: ${ window.innerWidth }px`);
+}
+);
 
 window.addEventListener("scroll", () => {
     console.log(`Scroll vertical: ${window.scrollY}px`);
@@ -100,7 +100,7 @@ window.addEventListener("scroll", () => {
 
 //Unidad 5 -validacion alfanumerica
 
-const codigoInput = document.getElementById("input"); 
+const codigoInput = document.getElementById("input");
 
 codigoInput.addEventListener("keypress", (evento) => {
     const caracter = evento.key;
@@ -108,7 +108,7 @@ codigoInput.addEventListener("keypress", (evento) => {
     //Letras y numeros
     const esAlfanumerico = /^[a-zA-Z0-9]$/.test(caracter);
 
-    if (!esAlfanumerico){
+    if (!esAlfanumerico) {
         evento.preventDefault();
         console.log("caracter no permitido: ", caracter)
     }
@@ -117,14 +117,14 @@ codigoInput.addEventListener("keypress", (evento) => {
 
 //Unidad 5- deteccion de teclas especiales
 
-document.addEventListener("keydown", (evento) =>{
-    if (evento.ctrlKey){
+document.addEventListener("keydown", (evento) => {
+    if (evento.ctrlKey) {
         console.log("Tecla CTRL pulsada");
     }
-     if (evento.shiftKey){
+    if (evento.shiftKey) {
         console.log("Tecla SHIFT pulsada");
     }
-     if (evento.key === "Enter"){
+    if (evento.key === "Enter") {
         console.log("Tecla ENTER pulsada");
     }
 });
@@ -145,28 +145,28 @@ abrir.addEventListener("click", () => {
 });
 
 
-libro1.addEventListener("mouseenter", tamaño);
-libro2.addEventListener("mouseenter", tamaño);
-libro3.addEventListener("mouseenter", tamaño);
-libro4.addEventListener("mouseenter", tamaño);
+//libro1.addEventListener("mouseenter", tamaño);
+//libro2.addEventListener("mouseenter", tamaño);
+//libro3.addEventListener("mouseenter", tamaño);
+//libro4.addEventListener("mouseenter", tamaño);
 
 //unidad 5- drag and drop
 
 const drop = document.getElementById("drop");
 
-[libro1,libro2,libro3,libro4].forEach(libro => {
+[libro1, libro2, libro3, libro4].forEach(libro => {
     libro.addEventListener("dragstart", (evento) => {
         evento.dataTransfer.setData("text", evento.target.id);
     });
 });
 
-drop.addEventListener("dragover", (evento) =>{
+drop.addEventListener("dragover", (evento) => {
     evento.preventDefault();
 });
 
 drop.addEventListener("drop", (evento) => {
     evento.preventDefault();
-    const idLibro= evento.dataTransfer.getData("text");
-    drop.textContent = `Has soltado ${idLibro}`;
-
+    const idLibro = evento.dataTransfer.getData("text");
+    drop.textContent = `Analizando ${idLibro}...`;
+    revisar(idLibro);
 })
