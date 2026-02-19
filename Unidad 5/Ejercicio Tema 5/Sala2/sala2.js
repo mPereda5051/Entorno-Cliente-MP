@@ -58,7 +58,7 @@ function revisar(idLibro) {
 
 //Tema 5 handleEvent + control burbuja
 const manejadorEvento = {
-    handleEvent(evento){
+    handleEvent(evento) {
         evento.stopPropagation();
         const idLibro = evento.target.id;
         revisar(idLibro);
@@ -89,7 +89,7 @@ libro4.addEventListener("click", manejadorEvento);
 
 //Unidad 5 -validacion alfanumerica
 
-const codigoInput = document.getElementById("input"); 
+const codigoInput = document.getElementById("input");
 
 codigoInput.addEventListener("keypress", (evento) => {
     const caracter = evento.key;
@@ -97,7 +97,7 @@ codigoInput.addEventListener("keypress", (evento) => {
     //Letras y numeros
     const esAlfanumerico = /^[a-zA-Z0-9]$/.test(caracter);
 
-    if (!esAlfanumerico){
+    if (!esAlfanumerico) {
         evento.preventDefault();
         console.log("caracter no permitido: ", caracter)
     }
@@ -106,14 +106,14 @@ codigoInput.addEventListener("keypress", (evento) => {
 
 //Unidad 5- deteccion de teclas especiales
 
-document.addEventListener("keydown", (evento) =>{
-    if (evento.ctrlKey){
+document.addEventListener("keydown", (evento) => {
+    if (evento.ctrlKey) {
         console.log("Tecla CTRL pulsada");
     }
-     if (evento.shiftKey){
+    if (evento.shiftKey) {
         console.log("Tecla SHIFT pulsada");
     }
-     if (evento.key === "Enter"){
+    if (evento.key === "Enter") {
         console.log("Tecla ENTER pulsada");
     }
 });

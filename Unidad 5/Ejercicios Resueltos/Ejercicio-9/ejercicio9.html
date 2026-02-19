@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!--- Añadimos aquí el estilo para ahorrarnos el CSS externo aunque no se recomienda en una página real -->
+  <style>
+    div,
+    fieldset {
+      margin: 0px 0px 10px 0px;
+    }
+
+    .foco {
+      background-color: rgb(224, 161, 161);
+    }
+
+    fieldset.activo {
+      background-color: lightgreen;
+    }
+  </style>
+  <script src="ejercicio9.js" defer></script>
+</head>
+
+<body>
+
+  <form id="formDatos" name="formDatos" action="#">
+
+    <div><input class="campo" type="text" name="nombre" placeholder="Nombre"></div>
+    <div><input class="campo" type="number" name="edad" placeholder="Edad"></div>
+
+    <div><select class="campo" name="pais">
+        <option value="">Selecciona país</option>
+        <option>España</option>
+        <option>México</option>
+        <option>Argentina</option>
+      </select>
+      <input class="campo" type="text" id="nuevoPais" placeholder="Añadir nuevo país">
+    </div>
+
+    <!-- Fieldset para probar propagación -->
+    <fieldset id="grupoContacto">
+      <legend>Datos de contacto</legend>
+
+      <input class="campo" type="email" name="email" placeholder="Correo electrónico">
+      <input class="campo" type="tel" name="telefono" placeholder="Teléfono">
+
+    </fieldset>
+
+    <div>
+      <textarea class="campo" name="comentarios" rows="3" placeholder="Comentarios" disabled></textarea>
+      <input type="checkbox" id="checkComentarios">Habilitar comentarios</input>
+    </div>
+
+    <div><input type="submit" value="Enviar"></div>
+
+</html>
