@@ -12,6 +12,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
 
 a {
   font-weight: 500;

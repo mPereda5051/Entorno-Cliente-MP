@@ -1,21 +1,28 @@
-import { useState } from 'react'
-import './App.css'
-import info from 'info.json'
+import datosJSON from "../datos.json";
 
 function App() {
 
-  let Json = JSON.stringify(info);
-  let blank = document.getElementById('json');
+  const datos = JSON.parse(
+    JSON.stringify(datosJSON),
+    (key, value) => {
+      return value; 
+    }
+  );
 
-  blank.textContent = Json;
+  return (   
+    <div>
+      <h1>Asistente Virtual</h1>
 
+      {datos.map((item) => (  
+        <div key={item.id}>
+          <p>Usuario: {item.usuario}</p>
+          <p>Asistente: {item.respuesta}</p>
+          <hr />
+        </div>
+      ))}
 
-  return (
-    <>
-    <p id='json'></p>
-
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
