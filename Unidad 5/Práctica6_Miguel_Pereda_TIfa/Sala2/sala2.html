@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sala 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="sala2.js" defer></script>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #93c5fd;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .instructions {
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #334155;
+            color: #e2e8f0;
+            border: none;
+            padding: 10px 15px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #475569;
+        }
+
+        .output {
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 8px;
+            min-height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+
+        <h1>Sala 2 — Biblioteca </h1>
+
+        <div class="section instructions">
+            <h3>Instrucciones</h3>
+            <p>
+                Estas en una biblioteca, la puerta por la que pasaste se cierra detras de ti, hay otra puerta al otro
+                lado de la habitacion, a lo mejor ahi esta la salida. Hay un letrero arriba que dice, "Encuentra los 3 libros que conectan con la puerta."
+                Hay varios libros, pero 4 te llaman la atencion, revisalos a ver si te pueden ayudar.
+            </p>
+        </div>
+
+        <div class="section" id="biblioteca">
+            <h3>Estantería</h3>
+            <button id="libro1" draggable="true">Libro de economia</button>
+            <button id="libro2" draggable="true">Libro de mecanica</button>
+            <button id="libro3" draggable="true">Libro de juegos</button>
+            <button id="libro4" draggable="true">Libro de fantasia</button>
+        </div>
+
+        <div class="section">
+            <button id="abrir">Intentar abrir puerta</button>
+        </div>   
+        
+        <div class ="section">
+            <h3>Analizar</h3>
+            <div id="drop" style="border:2px dashed #93c5fd; padding:20px;">
+                Arrastra aquí un libro
+            </div>
+
+        </div>
+
+        <div class="section">
+            <h3>Resultado</h3>
+            <div class="output" id="output"></div>
+        </div>
+     
+
+        <div>
+            <label for=""> Detector</label>
+            <input type="text" id="input" placeholder="Escribe aqui">
+        </div>
+
+    </div>
+</body>
+
+</html>
