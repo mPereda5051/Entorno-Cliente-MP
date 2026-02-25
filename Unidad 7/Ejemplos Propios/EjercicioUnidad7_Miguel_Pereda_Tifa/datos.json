@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "usuario": "¿Qué juego me recomiendas?",
+    "respuesta": "Te recomiendo The Legend of Zelda: Breath of the Wild.",
+    "categoria": "Aventura"
+  },
+  {
+    "id": 2,
+    "usuario": "Quiero un juego RPG por turnos",
+    "respuesta": "Puedes probar Pokemon Esmeralda o Final Fantasy VII .",
+    "categoria": "Shooter"
+  },
+  {
+    "id": 3,
+    "usuario": "¿Algún juego para jugar con amigos?",
+    "respuesta": "Minecraft es perfecto para jugar en grupo.",
+    "categoria": "Multijugador"
+  },
+  {
+    "id": 4,
+    "usuario": "Me gustan los juegos deportivos",
+    "respuesta": "Inazuma Eleven Heroes Victory Road es una buena opción.",
+    "categoria": "Deportes"
+  }
+]
