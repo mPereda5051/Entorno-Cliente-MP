@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>   
+        body{
+            height: 1000px;
+        }
+    
+        #contenedor {          
+            position: sticky;
+            top: 10px;
+            left: 10px;
+            width: 200px;
+            height: 150px;
+            padding: 20px;
+            border: 5px solid black;
+            background-color: lightblue;      
+            display: flex;
+            justify-content: center;
+            align-items: center;      
+        }
+
+        #arrastrable{
+            border: 1px solid black;
+            width: 70px;
+            height: 70px;
+            background-color: lightgreen;
+            margin-top: 10px;
+        }
+
+        #info{
+            position: fixed;
+            bottom: 0;
+            left: 10px;
+        }
+   
+    </style>
+
+    <!-- Carga después del HTML -->
+    <script src="js/Ejercicio 3_mpt.js" defer></script>
+</head>
+
+<body>
+    <div id="contenedor">
+        
+    </div>
+    <div id="arrastrable" draggable="true">Arrastra este div</div>
+    <p id="info"></p>
+</body>
+
+</html>

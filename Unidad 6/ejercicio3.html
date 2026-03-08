@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inspector de Atributos HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        #panel {
+            width: 50%;
+            border: 2px solid #333;
+            padding: 15px;
+            background: #f7f7f7;
+            border-radius: 6px;
+        }
+
+        #panel h2 {
+            margin-top: 0;
+        }
+
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 6px;
+            white-space: pre-wrap;
+        }
+
+        .resaltado {
+            outline: 3px solid red !important;
+        }
+
+        .zona {
+            flex: 1;
+            border: 2px solid #ccc;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        #comprobaciones{
+            display: none;
+        }
+    </style>
+    <script src="ejercicio3.js" defer></script>
+
+</head>
+
+<body>
+
+    <div class="zona" id="area">
+
+        <h1 >Inspector de Atributos</h1>
+
+        <p class="texto" title="Párrafo de ejemplo" data-type="descripcion">
+            Este <strong id="resaltado" data-level="1">párrafo</strong> contiene
+            <em data-extra="test">varios</em> atributos y dataset.
+        </p>
+
+        <button id="btnEnviar" class="boton verde" readonly data-user-id="123">
+            Enviar
+        </button>
+
+        <img id="foto" src="https://fastly.picsum.photos/id/919/200/200.jpg?hmac=jtDR0R0QNk8D4_SfAICLM_dNLuspq3B3nTWyOSYcQis" alt="Imagen ejemplo" data-category="media">
+
+    </div>
+
+    <div id="panel">
+        <h2>Información del elemento</h2>
+        <pre id="info">(Haz clic en cualquier elemento...)</pre>
+
+        <div id="comprobaciones">
+            <h3>Comprobar atributo</h3>
+            <input type="text" id="attrCheck" placeholder="Nombre atributo">
+            <button id="btnCheck">Comprobar</button>
+            <pre id="resultadoCheck"></pre>
+
+            <h3>Añadir / Modificar atributo</h3>
+            <input type="text" id="attrName" placeholder="Nombre atributo"><br><br>
+            <input type="text" id="attrValue" placeholder="Valor"><br><br>
+            <button id="btnSet">Aplicar</button>
+            <pre id="resultadoSet"></pre>
+            
+            <h3>Eliminar atributo</h3>
+            <input type="text" id="attrDel" placeholder="Nombre atributo">
+            <button id="btnDel">Eliminar</button>
+            <pre id="resultadoDel"></pre>
+
+            <h3>Modificar dataset</h3>
+            <input type="text" id="dataName" placeholder="Nombre dataset (sin data-)"><br><br>
+            <input type="text" id="dataValue" placeholder="Valor nuevo"><br><br>
+            <button id="btnData">Modificar dataset</button>
+            <pre id="resultadoData"></pre>
+            
+        </div>       
+
+    </div>

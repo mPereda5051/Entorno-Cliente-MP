@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio Navigator y Location</title>
+    <script src="ejercicio1.js" defer></script>
+</head>
+
+<body>
+
+    <h1>Ejercicio: Objetos Navigator y Location</h1>
+
+    <h2>Información del navegador (Navigator)</h2>
+    <div class="bloque" id="infoNavigator"></div>
+
+    <h2>Información de la URL (Location)</h2>
+    <div class="bloque" id="infoLocation"></div>
+
+    <h2>Botones de navegación (Location)</h2>
+    <button id="btnRecargar">Recargar página</button>
+    <button id="btnGoogle">Ir a Google</button>
+    <button id="btnSeccion">Ir a sección con detección hash</button>
+    <button id="btnParam">Cambiar parámetros</button>
+
+    <h2>Formulario para modificar parámetros de URL</h2>
+    <div class="bloque">
+        <label>Nombre: </label>
+        <input type="text" id="paramNombre"><br><br>
+
+        <label>Edad: </label>
+        <input type="number" id="paramEdad"><br><br>
+
+        <button id="btnAplicarParametros">Aplicar parámetros a la URL</button>
+    </div>
+
+    <h2>Sección actual</h2>
+    <div class="bloque" id="infoHash"></div>
+
+    <h2>Estado de Conexión</h2>
+    <div id="estadoConexion" class="bloque"></div>
+
+</body>
+
+</html>
