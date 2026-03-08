@@ -1,0 +1,80 @@
+/* --- Estilos base del menú --- */
+#menu {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #222;
+  width: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Estilos de los elementos del menú --- */
+#menu li {
+  position: relative;
+}
+
+#menu > ul > li > a {
+  background-color: #333;
+  color: #fff;
+  padding: 14px 16px;
+  display: block;
+  border-bottom: 1px solid #444;
+  transition: background-color 0.3s ease;
+}
+
+#menu a:hover {
+  background-color: #555;
+}
+
+/* --- Submenús (ocultos por defecto) --- */
+#menu ul ul {
+  position: relative;
+  display: none;
+  background-color: #2b2b2b;
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* --- Mostrar submenús al pasar el ratón --- */
+#menu li:hover > ul {
+  display: block;
+}
+
+/* --- Enlaces de los submenús --- */
+#menu ul ul a {
+  color: #ddd;
+  background-color: #2b2b2b;
+  padding: 10px 20px;
+  border-left: 3px solid #666;
+  display: block;
+  transition: background-color 0.3s ease, border-left-color 0.3s ease;
+}
+
+#menu ul ul a:hover {
+  background-color: #444;
+  border-left-color: #00bcd4;
+}
+
+/* --- Tercer nivel de submenús --- */
+#menu ul ul ul {
+  background-color: #1f1f1f;
+  margin-left: 10px;
+  border-left: 2px dashed #555;
+}
+
+#menu ul ul ul a {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* --- Enlaces --- */
+#menu a {
+  text-decoration: none;
+  cursor: pointer;
+}

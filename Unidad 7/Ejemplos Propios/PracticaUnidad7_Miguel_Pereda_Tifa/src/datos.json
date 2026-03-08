@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "usuario": "¿Qué juego me recomiendas?",
+    "respuesta": "Te recomiendo The Legend of Zelda: Breath of the Wild.",
+    "categoria": "Aventura"
+  },
+  {
+    "id": 2,
+    "usuario": "Quiero un juego RPG por turnos",
+    "respuesta": "Puedes probar Pokemon Esmeralda o Final Fantasy VII.",
+    "categoria": "RPG"
+  },
+  {
+    "id": 3,
+    "usuario": "¿Algún juego para jugar con amigos?",
+    "respuesta": "Minecraft es perfecto para jugar en grupo.",
+    "categoria": "Multijugador"
+  },
+  {
+    "id": 4,
+    "usuario": "Me gustan los juegos deportivos",
+    "respuesta": "Inazuma Eleven: Heroes' Victory Road es una buena opción.",
+    "categoria": "Deportes"
+  },
+  {
+    "id": 5,
+    "usuario": "Busco un juego de plataformas divertido",
+    "respuesta": "Super Mario Odyssey es una obra maestra de las plataformas 3D que no te puedes perder.",
+    "categoria": "Plataformas"
+  },
+  {
+    "id": 6,
+    "usuario": "Quiero un juego de disparos frenético",
+    "respuesta": "DOOM Eternal te dará toda la acción, velocidad y adrenalina que buscas.",
+    "categoria": "Shooter"
+  },
+  {
+    "id": 7,
+    "usuario": "¿Cuál es un buen juego de peleas?",
+    "respuesta": "Super Smash Bros. Ultimate tiene un plantel enorme, o puedes probar Tekken 8 si prefieres algo más tradicional.",
+    "categoria": "Lucha"
+  },
+  {
+    "id": 8,
+    "usuario": "Me apetece jugar algo de estrategia",
+    "respuesta": "Age of Empires II: Definitive Edition es un clásico imperdible de la estrategia en tiempo real.",
+    "categoria": "Estrategia"
+  },
+  {
+    "id": 9,
+    "usuario": "Recomiéndame un juego de miedo",
+    "respuesta": "Resident Evil 4 Remake y Silent Hill 2 tienen la mezcla perfecta entre terror y tensión psicológica.",
+    "categoria": "Terror"
+  },
+  {
+    "id": 10,
+    "usuario": "Quiero un juego de coches con buenos gráficos",
+    "respuesta": "Forza Horizon 5 te ofrece un mundo abierto increíble en México para conducir cientos de coches.",
+    "categoria": "Carreras"
+  },
+  {
+    "id": 11,
+    "usuario": "Busco un juego relajante para pasar el rato",
+    "respuesta": "Stardew Valley o Animal Crossing son ideales para desconectar y relajarte a tu ritmo.",
+    "categoria": "Simulación"
+  },
+  {
+    "id": 12,
+    "usuario": "¿Qué juego independiente me sugieres?",
+    "respuesta": "Hollow Knight es un 'metroidvania' excepcional con un diseño de mundo y arte brillantes.",
+    "categoria": "Indie"
+  },
+  {
+    "id": 13,
+    "usuario": "Me encantan los juegos de supervivencia",
+    "respuesta": "Subnautica te sumergirá en un océano alienígena lleno de misterios, belleza y peligros.",
+    "categoria": "Supervivencia"
+  },
+  {
+    "id": 14,
+    "usuario": "Busco una historia larga e inmersiva",
+    "respuesta": "The Witcher 3: Wild Hunt tiene una de las mejores narrativas y mundos de fantasía del medio.",
+    "categoria": "RPG de Acción"
+  },
+  {
+    "id": 15,
+    "usuario": "¿Qué juego gratuito competitivo me recomiendas?",
+    "respuesta": "Valorant o Apex Legends son excelentes opciones gratuitas si buscas algo táctico o un Battle Royale.",
+    "categoria": "Competitivo"
+  }
+]
